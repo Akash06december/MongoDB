@@ -39,3 +39,26 @@ user2.save().then((res)=>{
 }).catch((err)=>{
     console.log(err);
 });
+
+const user3 = new User({
+    name:"Swarup",
+    age:21,
+    email:"swarupP@gmail.com",
+    tag: "lover"
+});
+
+user3.save()
+.then((res)=>{
+    console.log(res);
+}).catch((err)=>{
+    console.log(err);
+});
+
+User.insertMany([
+    {name:"Priyanshu",email:"Pfifa@gmail.com",age:21},
+    {name:"Swayam",email:"stake@gmail.com",age:22}
+]).then((res)=>{
+    console.log(res);
+}).catch((err)=>{
+    console.log(err);
+})
