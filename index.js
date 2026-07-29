@@ -50,7 +50,21 @@ async function run() {
     //     console.log(err);
     // });
 
-    const user = User.find({});
-    console.log(user);
+
+    // User.findOneAndUpdate({name:"Swayam"},{age:50},{new:true})
+    // .then(res=>{
+    //     console.log(res);
+    // })
+    // .catch((err)=>{
+    //     console.log(err);
+    // });
+    
+    User.findByIdAndUpdate({_id: "6a6879beac668cb91f6935cb"},{age:30},{new:true})
+    .then(res=>{
+        console.log(res);
+    })
+    .catch((err)=>{
+        console.log(err);
+    });
 }
 run();
