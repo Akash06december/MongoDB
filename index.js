@@ -21,33 +21,36 @@ const userSchema = new mongoose.Schema(
 const User = mongoose.model("User",userSchema); // add collections to the MongoDB
 const Employee = mongoose.model("Employee",userSchema);
 
-// const user3 = new User({
-//     name:"Swarup",
-//     age:21,
-//     email:"swarupP@gmail.com",
-//     tag: "lover"
-// });
-
-// user3.save()
-// .then((res)=>{
-//     console.log(res);
-// }).catch((err)=>{
-//     console.log(err);
-// });
 
 // First deleting the previous data and adding the new one for performing operations
 
 async function run() {
-    await User.deleteMany({});
+    //await User.deleteMany({});
 
-    await User.insertMany([
-        { name: "Priyanshu", email: "Pfifa@gmail.com", age: 21 },
-        { name: "Swayam", email: "stake@gmail.com", age: 32 },
-        { name: "Ganya", email: "GanyaC@gmail.com", age: 11 }
-    ]);
+    // await User.insertMany([
+    //     { name: "Priyanshu", email: "Pfifa@gmail.com", age: 21 },
+    //     { name: "Swayam", email: "stake@gmail.com", age: 32 },
+    //     { name: "Ganya", email: "GanyaC@gmail.com", age: 11 }
+    // ]);
 
-    const res = await User.find({ age: { $gt: 20 } });
-    console.log(res[0].name);
+    // const users = await User.find({});
+    // console.log(users);
+
+
+    //const user = await User.findById("6a6878a2b1ee22a6489787ea");
+    //console.log(user);
+
+    // const user = await User.findOne({_id:"6a6879beac668cb91f6935cb"});
+    // console.log(user);
+
+    // User.updateOne({name:"Priyanshu"} , {age: 23})
+    // .then((res)=>{
+    //     console.log(res);
+    // }).catch(err =>{
+    //     console.log(err);
+    // });
+
+    const user = User.find({});
+    console.log(user);
 }
-
 run();
